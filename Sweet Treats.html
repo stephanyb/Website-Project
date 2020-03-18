@@ -1,0 +1,765 @@
+ <!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Sweet Treats</title>
+	
+	<style>
+	*{
+			box-sizing: border-box;
+	}
+		html
+		{
+			margin:0;
+			padding:0;
+			height:100%;
+			width:100%;
+			overflow:hidden;
+		}
+		/*Body of Site*/
+		body
+		{
+			margin:0;
+			padding:0;
+			height:100%;
+			width:100%;
+			background-color: white;
+			overflow:scroll;
+			overflow-x:hidden;
+		}
+		/*Banner on top*/
+		.banner
+		{
+			 
+			margin:0px auto;
+			padding:0;
+			height:30%;
+			width:100%;
+			overflow:hidden;
+			background-color:PINK;
+			border-color:81daf5;
+			border-width:0px 0px 5px 0px;
+		}
+/*Banner Image Properties*/
+		.banner > .banner-image
+		{
+			width:100%;
+			display:block;
+		}
+		/*Navigation Bar*/
+		.nav
+		{
+			overflow:hidden;
+			background-color:#333;
+			
+		}
+/*Navigation Bar Attribute Properties*/
+		.nav > button
+		{
+			float:right;
+			border: 1px solid black;
+			display:block;
+			background-color: #2d2c2c;
+			color:white;
+			text-align:center;
+			font-size:17px;
+			width:25%;
+			padding:10px 16px;
+			text-decoration:none;
+			transition: 0.3s;
+			font-family: "Times New Roman";
+		}
+/*Change to text color while Hovering*/
+		.nav button:hover
+		{
+			background-color:#ddd;
+			color: black;
+		}
+/*Create an active/current navtablinks class*/
+		.nav button.active
+		{
+			background-color: #FF69B4;
+		}
+/* Style the nav content */
+		.nav navtabcontent
+		{
+			display: none;
+			border-top: none;
+		}
+		.column
+		{
+			float:left;
+			width:50%;
+			padding:10;
+		}
+/*SignUp Page - Left Section*/
+		#SignUp
+		{
+			
+			background-image: url("Home-Background.png");
+			background-size: cover;
+		}
+		.SignColumn.left
+		{
+			position: left-side;
+			height:100%;
+			border-style:double;
+			padding: 10px;
+			border: 5px solid pink;
+			background-color:white;
+			margin-left:5px;
+			margin-right:5px;
+		}
+		.header1
+		{
+			text-align: center;
+			font-weight:bold;
+			font-size:40px;
+			color:#E8ADAA;
+		}
+		.header2
+		{
+			text-align:center;
+			color:#E8ADAA;
+			font-weight:bold;
+			font-size:25px;
+		}
+		ul
+		{
+			list-style-image: url("https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/1f353.svg");
+			font-size: 17px;
+			font-weight:bold;
+		}
+		input[type=text], select
+		{
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+		input[type=tel], select
+		{
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+		input[type=email], select
+		{
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+		input[type=password], select
+		{
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+		#Form_Div
+		{
+			border-radius:5px;
+			background-color: #f1f1f1;
+			padding:20px;
+		}
+		/* Clear floats */
+		.clearfix:after 
+		{
+			content: "";
+			clear: both;
+			display: table;
+		}
+		/* Extra styles for the cancel button */
+		.cancelbtn 
+		{
+			font-size: 20px;
+			padding: 14px 20px;
+			background-color: #F6358A;
+			color:white;
+			border: 1px solid #F6358A;
+		}
+		.signupbtn 
+		{
+			font-size:20px;
+			padding: 14px 20px;
+			background-color: #36F5A2;
+			color:white;
+			border: 1px solid #36F5A2;
+		}
+		/* Float cancel and signup buttons and add an equal width */
+		.cancelbtn, .signupbtn 
+		{
+			float: left;
+			width: 50%;
+		}
+/*SignUp Page - Right Section*/
+		.SignColumn.right
+		{
+			position: right-side;
+			height:100%;
+			border-style:double;
+			padding: 10px;
+			border: 5px solid #82CAFF;
+			background-color:white;
+			margin-right:5px;
+			margin-top:30px;
+		}
+		.header1-right
+		{
+			text-align: center;
+			font-weight:bold;
+			font-size:40px;
+			color:#ADA9E8;
+		}
+		.header2-right
+		{
+			text-align:center;
+			color:#ADA9E8;
+			font-weight:bold;
+			font-size:23px;
+		}
+		.loginbtn
+		{
+			font-size:20px;
+			background-color: #36F5A2;
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			cursor: pointer;
+			width: 100%;
+		}
+		.loginbtn:hover
+		{
+			opacity: 0.8;
+		}
+		.cancelbtn-left
+		{
+			width: auto;
+			padding: 10px 18px;
+			background-color: #F6358A;
+			color:white;
+			border: 1px solid #F6358A;
+		}
+		span.psw 
+		{
+			float: right;
+			padding-top: 16px;
+		}
+		.container 
+		{
+			padding: 16px;
+		}
+		.row:after
+		{
+			content:"";
+			display:table;
+			clear:both;
+		}
+/*Home Page*/
+		.HomeColumn
+		{
+			position: center;
+			height:100%;
+			width:100%;
+			border-style:double;
+			padding: 100px;
+			border: 5px solid pink;
+			background-color:white;
+			background-image: url("Home-Background.png");
+		}
+		.Homeheader1
+		{
+			font-family: "Brush Script MT", cursive;
+			font-size: 72px;
+			font-style: normal;
+			color: #87095D;
+			
+		}
+		.Pcolor
+		{
+			color:#C34599;
+			font-size: 30px;
+			font-weight:bold;
+			font-family: "Bookman";
+		}
+		#Center_Div
+		{
+			width:100%;
+			padding:10px;
+			border: 5px solid #E56E94;
+			margin:0;
+			background-color:pink;
+			
+		}
+		#Center2_Div
+		{
+			width:55%;
+			padding:10px;
+			border-bottom: 5px solid #E56E94;
+			border-left: 5px solid #E56E94;
+			border-right: 5px solid #E56E94;
+			margin-left:250px;
+			background-color:pink;
+			font-size: 19px;
+			font-weight:bold;
+			font-family: "Bookman";
+			color: #C36241;
+		}	
+/*Upload Page*/
+		.UploadColumn
+		{
+			position: center;
+			height:100%;
+			width:100%;
+			border-style:double;
+			padding: 0px;
+			border: 5px solid pink;
+			background-color:white;
+			background-image: url("Home-Background.png");
+			background:cover;
+		}
+		.UploadHeader3
+		{
+			font-family: "Brush Script MT", cursive;
+			font-size: 40px;
+			font-style: normal;
+			font-weight:bold;
+			color: #87095D;
+		}
+		.UploadParaclass
+		{
+			color:#C34599;
+			font-size: 17px;
+			font-weight:bold;
+			font-family: "Bookman";
+		}
+		#UploadCenter_Div
+		{
+			width:80%;
+			padding:10px;
+			border: 5px solid #E56E94;
+			margin-left:125px;
+			background-color:pink;
+		}
+		.Upload-FirstTopColumn
+		{
+			margin-left:250px;
+			font-weight:bold;
+		}
+		.SocialLinks
+		{
+			width:30%;
+			padding:5px;
+			/*border: 5px solid #E56E94;*/
+			margin-left:430px;
+		}
+		.fa 
+		{
+			padding: 20px;
+			font-size: 30px;
+			width: 80px;
+			text-align: center;
+			text-decoration: none;
+			margin: 5px 2px;
+			border-radius: 50%;
+		}
+		.fa:hover 
+		{
+			opacity: 0.7;
+		}
+		.fa-facebook 
+		{
+			background: #3B5998;
+			color: white;
+		}
+		.fa-twitter 
+		{
+			background: #55ACEE;
+			color: white;
+		}
+		.fa-google 
+		{
+			background: #dd4b39;
+			color: white;
+		}
+		.fa-pinterest 
+		{
+			background: #cb2027;
+			color: white;
+		}
+		#UploadForm_Div
+		{
+			width:80%;
+			border-radius:5px;
+			background-color: #f1f1f1;
+			padding:20px;
+			margin-left:130px;
+			margin-right:50px;
+			position:left-side;
+			
+		}
+		#RecipeName
+		{	
+			position:center;
+			width:400px;
+		}
+		#Ingredients
+		{	
+			position:left-side;
+			width:350px;
+		}
+		#UploadForm_DivRight
+		{
+			width:80%;
+			border-radius:5px;
+			background-color: #f1f1f1;
+			padding:20px;
+			margin-top:30px;
+			margin-left:130px;
+			margin-right:20px;
+			position:right-side;
+		}
+		#RecipeSteps
+		{
+			position:right-side;
+			width:700px;
+		}
+		.loginbtn2
+		{
+			font-size:20px;
+			background-color: #36F5A2;
+			color: white;
+			padding: 14px 20px;
+			margin-left: 8px;
+			border: none;
+			cursor: pointer;
+			width: 85%;
+		}
+/*Recipe Page*/
+		.RecipeColumn
+		{
+			position: center;
+			height:100%;
+			width:100%;
+			border-style:double;
+			padding: 100px;
+			border: 5px solid pink;
+			background-color:white;
+			background-image: url("Home-Background.png");
+		}
+		.RecipeHeader3
+		{
+			position:top;
+			font-family: "Brush Script MT", cursive;
+			font-size: 50px;
+			font-style: normal;
+			font-weight:bold;
+			color: #87095D;
+		}
+		.RecipeParaclass
+		{
+			color:#C34599;
+			font-size: 17px;
+			font-weight:bold;
+			font-family: "Bookman";
+		}
+		#RecipeCenter_Div
+		{
+			width:80%;
+			padding:10px;
+			border: 5px solid #E56E94;
+			margin-left:125px;
+			background-color:pink;
+		}
+		#FirstImage 
+		{
+			background: url("https://imagesvc.timeincapp.com/v3/mm/image?url=http%3A%2F%2Fcdn-image.myrecipes.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2Fstrawberry-dream-cake-sl.jpg%3Fitok%3DfOx1P4Z8&w=800&q=85") no-repeat;
+			border: 2px solid black;
+			padding: 100px;
+			background-size:cover; 
+		}
+		#SecondImage 
+		{
+			background: url("https://images-gmi-pmc.edge-generalmills.com/4d7324ae-cd47-4fae-b94a-e95c3919a275.jpg") no-repeat;
+			border: 2px solid black;
+			padding: 100px;
+			background-size:cover; 
+		}
+		#ThirdImage
+		{
+			background: url("http://images.media-allrecipes.com/userphotos/720x405/5055712.jpg") no-repeat;
+			border: 2px solid black;
+			padding: 100px;
+			background-size:cover; 
+		}
+		#FourthImage
+		{
+			background: url("https://images-gmi-pmc.edge-generalmills.com/c3d2cdbd-ef1c-4cb7-8b02-8045a5420e35.jpg") no-repeat;
+			border: 2px solid black;
+			padding: 100px;
+			background-size:cover; 
+		}
+		#FifthImage
+		{
+			background: url("https://www.inspiredtaste.net/wp-content/uploads/2012/11/Chocolate-Andes-Mint-Cookies-Recipe-1-1200.jpg") no-repeat;
+			border: 2px solid black;
+			padding: 100px;
+			background-size:cover; 
+		}
+	</style>
+	
+</head>
+<body>
+	
+	<div class="banner">
+		<img class="banner-image" src="Cake2.jpg">
+	</div>
+	
+	<!-- Nav Content -->
+	<div class="nav">
+		<button class="navtablinks" onclick="openTab(event, 'SignUp')" >Sign Up / Login</button>
+		<button class="navtablinks" onclick="openTab(event, 'Upload')">Upload Recipe</button>
+		<button class="navtablinks" onclick="openTab(event, 'Recipes')">Recipes</button>
+		<button class="navtablinks" onclick="openTab(event, 'Home')"id="defaultOpen">Home</button>
+	</div>
+	
+	<!-- Tab content -->
+	<!--Sign Up Content-->
+	<div id="SignUp" class="navtabcontent">
+		<div class="row">
+			<!-- Left Side of Page-->
+			<div class="column">
+			<div class="SignColumn left">
+				<h1 class="header1">New to our world of Desserts?</h1>
+				<h2 class="header2">Sign Up for Our Sweet Site!</h2>
+				<h5>
+				It's simple, it's fast and as easy as Pie! Become apart of the community of dessert lovers from all around the world. :)
+				Our Members recieve plenty of perks! Some include:
+					<ul>
+						<li>Exclusive Firsts Look to Our Latest Recipes</li>
+						<li>Our Monthly "Sweet Treats" Cataloges through Mail</li>
+						<li>Weekly Discounts, Coupons and Offers from over 100 Stores!</li>
+						<li>And so much MORE!</li>
+					</ul>
+				</h5>
+				<h4 align="center">Fill out the following form and let the Baking Begin!</h4>
+				
+				<!-- Sign Up Form-->
+				<div id="Form_Div">
+					<label for="FirstName">First Name</label>
+					<input type="text" id="FirstName" name="firstname" placeholder="Your First Name.." required>	
+			
+					<label for="MiddleName">Middle Name (Optional)</label>
+					<input type="text" id="Middle Name" name="middlename" placeholder="Your Middle Name..">
+			
+					<label for="LastName">Last Name</label>
+					<input type="text" id="Last Name" name="lastname" placeholder="Your Last Name.." required>
+			
+					<label for="StreetAddress">Street Address</label>
+					<input type="text" id="StreetAddress" name="streetaddress" placeholder="123 Cupcake ln..." required>
+					
+					<label for="MobileNumber">Mobile Number</label>
+					<input type="tel" id="MobileNumber" name="mobilenumber" placeholder="012-345-6789" required>
+					
+					<label for="E-mailAddress">E-mail Address (This will be your Username)</label>
+					<input type="email" id="EmailAddress" name="emailaddress" placeholder="JaneDoe@email.com" required>
+					
+					<label for="Password">User Password</label>
+					<input type="password" id="Password" name="password" required>
+					
+					<label for="RePassword">Re-Type User Password</label>
+					<input type="password" id="RePassword" name="repassword" required>	
+				</div>
+				<div class="clearfix">
+					<button type="button" class="cancelbtn">Cancel</button>
+					<button type="submit" class="signupbtn">Sign Up</button>
+				</div>	
+			</div>
+			</div>
+			
+			<!--Right Side of Page-->
+			<div class="column">
+			<div class="SignColumn right">
+				<h1 class="header1-right">Already a Sweet Treats Member?</h1>
+				<h2 class="header2-right">Login To Continue Your Journey through the World of Sweet Treats!</h3>
+				
+				<!-- Login Form-->
+				<div id="LoginForm_Div">
+					<label for="uname"><b>Username</b></label>
+					<input type="text" placeholder="Enter Username" name="uname" required>
+
+					<label for="psw"><b>Password</b></label>
+					<input type="password" placeholder="Enter Password" name="psw" required>
+
+					<button type="submit" class="loginbtn">Login</button>
+					<label>
+					<input type="checkbox" checked="checked" name="remember"> Remember me
+					</label>
+				</div>
+				<div class="container" style="background-color:#f1f1f1">
+					<button type="button" class="cancelbtn-left">Cancel</button>
+					<span class="psw">Forgot <a href="#">password?</a></span>
+				</div>
+			</div>
+			</div>		
+		</div>
+	</div>
+	
+	<!-- Upload Content-->
+	<div id="Upload" class="navtabcontent">
+		<div class="row">
+			<div class="UploadColumn">
+				<h3 class="UploadHeader3" align="center">Upload Your Very Own Recipe!</h3>
+					<div id="UploadCenter_Div" class="UploadParaclass" align="center">
+						It's never been so simple and easy to share those recipes that you hold
+						near and dear to your heart. Whether it's a family recipe passed down from generatio
+						to generation, or simply your very own concoction, share it with the thousands
+						of Sweet Treats daily users!
+					</div>
+	
+					<div class="Upload-FirstTopColumn">
+						<h3>Already have that tasty recipe online? 
+							Save time and Upload now via the following sites:
+						</h3>
+					</div>
+					<div class="SocialLinks">
+						<a align="center" href="#" class="fa fa-facebook"></a>
+						<a align="center" href="#" class="fa fa-twitter"></a>
+						<a align="center" href="#" class="fa fa-google"></a>
+						<a align="center" href="#" class="fa fa-pinterest"></a>
+					</div>
+					
+						<h3 align="center"> 
+							Don't have that recipe on hand? No Worries!
+							You may now also enter that recipe below! Just fill
+							out the form below and share your Sweet Treats with the 
+							Rest of the World!
+						</h3>
+						
+					<div id="UploadForm_Div">
+						<label for="Recipe Name"><b>Recipe Name</b></label>
+						<input type="text" id="RecipeName" name="recipename" placeholder="Name your Sweet Creation!" required>	
+						<h4>Ingredients Required:</h4>
+						<ul>
+							<li><label for="Ingredient_1:"></label>
+								<input type="text" id="Ingredients" name="ingredient1" placeholder="2 cups of ..." required>
+								<input type="text" id="Ingredients" name="ingredient1.1" placeholder="3 cups of ..." required>
+							</li>
+							<li><label for="Ingredient_2:"></label>
+								<input type="text" id="Ingredients" name="ingredient2" placeholder="2 tbsp of ..." required>
+								<input type="text" id="Ingredients" name="ingredient2.1" placeholder="3 tbsp of ..." required>
+							</li>
+							<li><label for="Ingredient_3:"></label>
+								<input type="text" id="Ingredients" name="ingredient3" placeholder="2 pints of ..." required>
+								<input type="text" id="Ingredients" name="ingredient3" placeholder="3 pints of ..." required>
+							</li>
+						</ul>
+					</div>
+					
+					<div id="UploadForm_DivRight">
+						<h4>Recipe Steps:</h4>
+						<ol>
+							<li><label for="Steps"></label>
+							<input type="text" id="RecipeSteps" name="recipesteps" placeholder="ex: Pre-heat oven to ..." required>
+							</li>
+						
+							<li><input type="text" id="RecipeSteps" name="recipesteps1" placeholder="ex: Mix dry ingredients ..." required></li>
+							<li><input type="text" id="RecipeSteps" name="recipesteps2" placeholder="ex: Mix wet ingredients ..." required></li>
+							<li><input type="text" id="RecipeSteps" name="recipesteps3" placeholder="ex: Combine wet and dry ingredients ..." required></li>
+						<ol>
+						<button type="submit" class="loginbtn2">Submit</button>
+					</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="Recipes" class="navtabcontent">
+		<div class="row">
+			<div class="RecipeColumn">
+				<h3 class="RecipeHeader3" align="center">Top Five Recipes of the Week!</h3>
+					<div id="RecipeCenter_Div" class="RecipeParaclass" align="center">
+						From Tasty to Sweet to Pretty to AWESOME!
+						Check Out These Sweet and Popular Recipes Of The Week:
+						<ul>
+							<li><a href="http://www.myrecipes.com/recipe/strawberry-dream-cake">Strawberry Dream Cake</a>
+							<div id="FirstImage"></div>
+							</li>
+			
+						<li><a href="https://www.bettycrocker.com/recipes/pumpkin-pie/c20c218d-9d63-4f1c-aee3-0a93381e2f0d">Delicious Pumpkin Pie</a>
+							<div id="SecondImage"></div>
+						</li>
+			
+						<li><a href="http://allrecipes.com/recipe/19165/creme-brulee/?internalSource=editorial_3&referringId=79&referringContentType=recipe%20hub&clickId=st_trending_s"> Elegant Creme Brulee</a>
+							<div id="ThirdImage"></div>
+						</li>
+			
+						<li><a href="https://www.pillsbury.com/recipes/chocolate-ganache-mini-cakes/2ca30ba8-5a87-4885-ad48-d997ec132e2d">Perfect Chocolate Ganache Mini-Cupcakes</a>
+						<div id="FourthImage"></div>
+						</li>
+			
+					<li><a href="https://www.inspiredtaste.net/17101/andes-mint-chocolate-cookies-recipe/">Mint Chocolate Cookies that are Out of this World!</a>
+					<div id="FifthImage"></div>
+					</li>
+		</ul>
+						
+						
+						
+					</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Home Content-->
+	<div id="Home" class="navtabcontent">
+		<div class="row">
+			<div class="HomeColumn">
+				<h1 class="Homeheader1" align="center">Welcome to Sweet Treats</h1>
+					<div id="Center_Div" align="center" class= "Pcolor" >
+					One of the most simplistic websites designed for dessert lovers of all ages!
+					</div>
+				<div id="Center2_Div" align="center">Click on any of the above tabs and explore our Sweet Treats site!</div>
+			</div>
+		</div>	
+	</div>
+
+	<!-- JS Script for navtablinks -->
+<script>
+	function openTab(evt, navtabName) 
+	{
+		var i, navtabcontent, navtablinks;
+		navtabcontent = document.getElementsByClassName("navtabcontent");
+		for (i = 0; i < navtabcontent.length; i++) 
+		{
+			navtabcontent[i].style.display = "none";
+		}
+		navtablinks = document.getElementsByClassName("navtablinks");
+		for (i = 0; i < navtablinks.length; i++) 
+		{
+			navtablinks[i].className = navtablinks[i].className.replace(" active", "");
+		}
+		document.getElementById(navtabName).style.display = "block";
+		evt.currentTarget.className += " active";
+	}
+	document.getElementById("defaultOpen").click();
+</script>
+
+	
+</body>
+
+</html>
